@@ -30,8 +30,8 @@ public class UserDaoJDBCImpl implements UserDao {
         try (Statement statement = conn.createStatement()) {
             statement.executeUpdate("DROP TABLE users");
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException ignored) {
+
         }
 
     }
