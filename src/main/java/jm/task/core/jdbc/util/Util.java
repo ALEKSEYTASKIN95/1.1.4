@@ -1,6 +1,5 @@
 package jm.task.core.jdbc.util;
 
-
 import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -18,15 +17,15 @@ public class Util {
     private static final String PASSWORD = "root";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-    private static SessionFactory sessionFactory = null ;
+    private static SessionFactory sessionFactory = null;
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration()
                         .setProperty("hibernate.connection.driver_class", DRIVER)
-                        .setProperty("hibernate.connection.url",URL)
-                        .setProperty("hibernate.connection.username",USER)
-                        .setProperty("hibernate.connection.password",PASSWORD)
+                        .setProperty("hibernate.connection.url", URL)
+                        .setProperty("hibernate.connection.username", USER)
+                        .setProperty("hibernate.connection.password", PASSWORD)
                         .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect")
                         .setProperty("current_session_context_class", "thread")
                         .addAnnotatedClass(User.class);

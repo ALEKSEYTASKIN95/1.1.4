@@ -1,6 +1,12 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.GenerationType;
+
 
 @Entity()
 @Table(name = "users")
@@ -10,13 +16,13 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "username")
+    @Column(name = "username")
     private String name;
 
-    @Column (name = "lastname")
+    @Column(name = "lastname")
     private String lastName;
 
-    @Column (name = "age")
+    @Column(name = "age")
     private Byte age;
 
     public User() {
